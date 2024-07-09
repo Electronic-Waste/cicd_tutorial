@@ -52,6 +52,7 @@ permissions:
 # runs-on：指定了Job运行的环境，Github提供了Ubuntu, Windows和MacOS运行器来运行Job
 # steps：Job中的顺序执行的步骤，下方表示一个名叫"Comment"的step要执行`gh pr comment`命令
 # env：指定在Job中用到的环境变量，例如下方的PR_URL，其值为该PR的链接
+# 在使用Github CLI的时候需要在环境变量中传入GITHUB_TOKEN
 jobs:
   welcome:
     name: Welcome to Github Actions
@@ -60,6 +61,7 @@ jobs:
     - name: Comment
       run: gh pr comment $PR_URL --body "Welcome to the repository!"
     env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       PR_URL: ${{ github.event.pull_request.html_url }}
 ```
 
