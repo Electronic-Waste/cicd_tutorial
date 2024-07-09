@@ -26,7 +26,7 @@
 
 ## 1. Welcome to Github Actions
 
-本例子搬运修改自[Github中文社区教程](https://www.github-zh.com/getting-started/hello-github-actions)，要去让Github Actions评论每一个向本分支发起合并请求的Pull Requests，我们通过这个例子简单了解一下Workflow YAML文件的编写方式。
+本例子搬运修改自[Github中文社区教程](https://www.github-zh.com/getting-started/hello-github-actions)。在这个例子中我们要让Github Actions评论每一个向`1_github_actions_welcome`分支发起的PRs。以下是这个例子的Workflow YAML文件，通过这个例子我们可以简单了解一下Workflow YAML文件的编写方式。
 
 ```YAML
 # name表示这个Workflow的名字是...
@@ -58,5 +58,9 @@ jobs:
 ```
 
 需要注意的是**Github仅识别default branch下的`.github/workflows`文件夹，因此你需要在default branch中存放所有的Workflow YAML文件**。
+
+你可以通过向`1_github_actions_welcome`分支发起PR来测试一下这个Workflow YAML文件，不出意外的话会出现：
+
+
 
 \#WIP
