@@ -67,8 +67,8 @@ jobs:
 
 需要注意的是**Github仅识别default branch下的`.github/workflows`文件夹，因此你需要在default branch中存放所有的Workflow YAML文件**。
 
-你可以通过向`1_github_actions_welcome`分支发起PR来测试一下这个Workflow YAML文件，不出意外的话会出现：
+你可以通过向`1_github_actions_welcome`分支发起PR来进行测试，不出意外的话会出现：
 
-
+![](./img/welcome.png)
 
 \#WIP
