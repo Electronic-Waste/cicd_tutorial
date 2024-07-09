@@ -40,6 +40,12 @@ on:
     branches:
     - 1_github_actions_welcome
 
+# permissions声明了该Workflow需要用到的权限
+# pull-requests: write 表示我们为该Workflow赋予了写权限
+# Workflow默认使用的ITHUB_TOKEN没有写权限，需要在"Settings-Actions-General"中打开Workflow的write权限
+permissions:
+  pull-requests: write
+
 # jobs表示具体要执行的一个或多个任务(Job)
 # welcome：定义了一个Job，可以随便取
 # name：welcome Job的名称
