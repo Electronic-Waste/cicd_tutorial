@@ -57,6 +57,6 @@ jobs:
       PR_URL: ${{ github.event.pull_request.html_url }}
 ```
 
-需要注意的是**Github仅识别default branch下的`.github/workflows`文件夹**，因此你需要在default branch中**存放所有的Workflow YAML文件**。
+需要注意的是**Github仅识别default branch下的`.github/workflows`文件夹，因此你需要在default branch中存放所有的Workflow YAML文件**。
 
 \#WIP
