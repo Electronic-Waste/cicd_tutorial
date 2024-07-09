@@ -1,10 +1,10 @@
 # CI/CD Tutorial
 
-## 0. Overview for Github Action
+## 0. Overview for Github Actions
 
 我把华为云上CI/CD的配置（吐槽）放在了[0_huawei_cloud](https://github.com/Electronic-Waste/cicd_tutorial/tree/0_huawei_cloud)分支下，如果不想看Github Action的话可以直接跳转到`0_huawei_cloud`分支下看华为云CI/CD的教程。
 
-如果你是配置完华为云CI/CD才来看Github Action的话，那么恭喜你，你会发现CI/CD竟然可以如此优雅和简单；如果你是一上来就看Github Action的话，那么也恭喜你，你少走了几十年的弯路。Github Action和华为云CI/CD的最主要的区别是什么呢？我想应该是：
+如果你是配置完华为云CI/CD才来看Github Actions的话，那么恭喜你，你会发现CI/CD竟然可以如此优雅和简单；如果你是一上来就看Github Actions的话，那么也恭喜你，你少走了几十年的弯路。Github Actions和华为云CI/CD的最主要的区别是什么呢？我想应该是：
 
 1. 简洁&方便：所有的工作流(Workflow)以代码的形式定义在项目的`.github/workflows`目录下，没有让人眼花缭乱的图形化界面，可以方便地在团队间共享和重用。
 
@@ -14,9 +14,20 @@
 
 介绍几个简单的概念（复制粘贴自官方文档）：
 
-1. **Github Actions**: 使用 GitHub Actions 几乎可以帮您自动化软件开发流程中的方方面面。包括自动化测试、CI/CD持续部署、自动化代码审查、管理问题和拉取请求，等等。最棒的是，这些工作流配置以代码的形式保存在您的git仓库中，可以很方便的在团队之间共享和重用。
+1. **Github Actions**: 使用GitHub Actions几乎可以帮您自动化软件开发流程中的方方面面。包括自动化测试、CI/CD持续部署、自动化代码审查、管理问题和拉取请求，等等。最棒的是，这些工作流配置以代码的形式保存在您的git仓库中，可以很方便的在团队之间共享和重用。
 
 2. **工作流(Workflow)**: 工作流是一个可配置的自动化流程，它将运行一个或多个作业（task/job）。流程配置文件使用YAML格式，保存在仓库的`.github/workflows`文件夹中，只有所选事件发生时，才会触发执行。
 
-下面让我们实操一下功能强大的Github Action吧
+3. **作业(Job)**：作业是工作流中在同一运行器上（runner）执行的一组步骤。一个工作流可以包含多个作业，一个作业由多个步骤组成，步骤按顺序执行并且相互依赖。
 
+4. **步骤(steps)**：Actions steps将在我们的作业运行期间按顺序运行。每个步骤要么是一段将要执行的shell脚本，要么别人编写好的GitHub Action。它们按顺序执行，并且相互依赖。由于每个步骤都在同一运行器上执行，因此你可以将数据从一个步骤共享到另一个步骤。例如，可以有一个生成应用程序的步骤，后跟一个测试已生成应用程序的步骤。
+
+下面让我们通过几个例子上手实操一下功能强大的Github Actions吧！
+
+## 1. Welcome to Github Actions
+
+本例子搬运修改自[Github中文社区教程](https://www.github-zh.com/getting-started/hello-github-actions)，要去让Github Actions评论每一个向本分支发起合并请求的Pull Requests，我们通过这个例子简单了解一下Workflow YAML文件的编写方式。
+
+
+
+\#WIP
