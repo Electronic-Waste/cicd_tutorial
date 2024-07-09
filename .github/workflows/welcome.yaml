@@ -2,10 +2,12 @@
 name: Welcome to Github Actions 
 
 # on表示在某些事件发生的情况下触发该Workflow
-# pull_request：向该分支发送PR的事件
-# 其它常见的事件还有push(向远端推送代码)、schedule(定时执行)
+# pull_request：向该分支发送PR的事件，其它常见的事件还有push(向远端推送代码)、schedule(定时执行)
+# branches：指定能触发事件的代码分支
 on: 
   pull_request:
+    branches:
+    - 1_github_actions_welcome
 
 # jobs表示具体要执行的一个或多个任务(Job)
 # welcome：定义了一个Job，可以随便取

@@ -28,6 +28,35 @@
 
 本例子搬运修改自[Github中文社区教程](https://www.github-zh.com/getting-started/hello-github-actions)，要去让Github Actions评论每一个向本分支发起合并请求的Pull Requests，我们通过这个例子简单了解一下Workflow YAML文件的编写方式。
 
+```YAML
+# name表示这个Workflow的名字是...
+name: Welcome to Github Actions 
 
+# on表示在某些事件发生的情况下触发该Workflow
+# pull_request：向该分支发送PR的事件，其它常见的事件还有push(向远端推送代码)、schedule(定时执行)
+# branches：指定能触发事件的代码分支
+on: 
+  pull_request:
+    branches:
+    - 1_github_actions_welcome
+
+# jobs表示具体要执行的一个或多个任务(Job)
+# welcome：定义了一个Job，可以随便取
+# name：welcome Job的名称
+# runs-on：指定了Job运行的环境，Github提供了Ubuntu, Windows和MacOS运行器来运行Job
+# steps：Job中的顺序执行的步骤，下方表示一个名叫"Comment"的step要执行`gh pr comment`命令
+# env：指定在Job中用到的环境变量，例如下方的PR_URL，其值为该PR的链接
+jobs:
+  welcome:
+    name: Welcome to Github Actions
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Comment
+      run: gh pr comment $PR_URL --body "Welcome to the repository!"
+    env:
+      PR_URL: ${{ github.event.pull_request.html_url }}
+```
+
+需要注意的是**Github仅识别default branch下的`.github/workflows`文件夹**，因此你需要在default branch中**存放所有的Workflow YAML文件**。
 
 \#WIP
