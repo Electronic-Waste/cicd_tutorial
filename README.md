@@ -20,7 +20,7 @@
 
 3. **作业(Job)**：作业是工作流中在同一运行器上（runner）执行的一组步骤。一个工作流可以包含多个作业，一个作业由多个步骤组成，步骤按顺序执行并且相互依赖。
 
-4. **步骤(steps)**：Actions steps将在我们的作业运行期间按顺序运行。每个步骤要么是一段将要执行的shell脚本，要么别人编写好的GitHub Action。它们按顺序执行，并且相互依赖。由于每个步骤都在同一运行器上执行，因此你可以将数据从一个步骤共享到另一个步骤。例如，可以有一个生成应用程序的步骤，后跟一个测试已生成应用程序的步骤。
+4. **步骤(Steps)**：Actions steps将在我们的作业运行期间按顺序运行。每个步骤要么是一段将要执行的shell脚本，要么别人编写好的GitHub Action。它们按顺序执行，并且相互依赖。由于每个步骤都在同一运行器上执行，因此你可以将数据从一个步骤共享到另一个步骤。例如，可以有一个生成应用程序的步骤，后跟一个测试已生成应用程序的步骤。
 
 下面让我们通过几个例子上手实操一下功能强大的Github Actions吧！
 
@@ -70,5 +70,13 @@ jobs:
 你可以通过向`1_github_actions_welcome`分支发起PR来进行测试，不出意外的话会出现：
 
 ![](./img/welcome.png)
+
+## 2. Unit Test
+
+通过[上面的例子](#1-welcome-to-github-actions)，我们初步上手了Github Actions，并对Workflow、Job、Steps等概念有了一个大概的了解。但这远远不够，Github Actions其它的一些强大功能还没有被我们发掘出来，比如**Github Actions强大的Marketplace**。Marketplace不仅有Github官方发布的一些通用Actions，还有来自全世界各地的开发者贡献的Actions，它们共同实现了Github Actions生态的繁荣。接下来，我们将通过下面的例子更深入地了解Github Actions吧。
+
+在这个例子中，我们将配置好Java环境，并对Java Helloworld项目进行单元测试（虽然我并没有写测试集）。你将直观地感受到Github Actions功能的强大。
+
+
 
 \#WIP
