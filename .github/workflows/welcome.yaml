@@ -3,9 +3,12 @@ name: Welcome to Github Actions
 
 # on表示在某些事件发生的情况下触发该Workflow
 # pull_request：向该分支发送PR的事件，其它常见的事件还有push(向远端推送代码)、schedule(定时执行)
+# pull_request_target：和pull_request类似，区别是它执行时具有目标分支（即仓库主分支）的上下文权限，而不是源分支的上下文权限。
+# 这个事件触发器的主要用途是处理来自fork仓库的Pull Request，因为它可以使用目标仓库的secrets。
 # branches：指定能触发事件的代码分支
 on: 
-  pull_request:
+#  pull_request:
+  pull_request_target:
     branches:
     - 1_github_actions_welcome
 
